@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+
+    
+    <main class="container" id="main-container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-md-6 form-container">
+                <form id="form">
+                    <div class="form-floating d-flex">
+                        <input type="text" class="form-control mb-3" id="floatingGross" placeholder="Enter gross annual income">
+                        <div class="circular-warning position-absolute top-0 start-100 translate-middle d-none" id="warn-gross" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Please enter number only">
+                            <i class="fas fa-info" ></i> 
+                          </div>                      
+                        <label for="floatingInput">Enter gross annual income</label>
+                    </div>
+                    <div class="form-floating"> 
+                        <input type="text" class="form-control mb-3" id="floatingExtra" placeholder="enter extra income">
+                        <div class="circular-warning position-absolute top-0 start-100 translate-middle d-none" id="warn-extra" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Please enter number only">
+                            <i class="fas fa-info" ></i> 
+                          </div>  
+                        <label for="floatingPassword">Enter extra income</label>
+                    </div>
+                    <div class="form-floating">
+                        <div class="dropdown">
+                            <button class="form-control btn btn-outline-secondary d-flex justify-content-between dropdown-toggle mb-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="floatingAge">
+                                <label for="floatingPassword" id="ageField">Enter age group</label>
+                            </button>
+                            <ul class="dropdown-menu dropdown">
+                                <li><a class="dropdown-item opt" href="#"> less than 40</a></li>
+                                <li><a class="dropdown-item opt" href="#">greater than and equal to 40 but less than 60</a></li>
+                                <li><a class="dropdown-item opt" href="#">greater than equal to 60</a></li>
+                            </ul>
+                        </div>
+                        <div class="circular-warning position-absolute top-0 start-100 translate-middle d-none" id="warn-age" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Please Select an age">
+                            <i class="fas fa-info" ></i> 
+                          </div>  
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control mb-5" id="floatingDeductions" placeholder="Enter total applicable deduction">
+                        <div class="circular-warning position-absolute top-0 start-100 translate-middle d-none" id="warn-deduction" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Please enter number only">
+                            <i class="fas fa-info" ></i> 
+                          </div>  
+                        <label for="floatingPassword" class="form-label">Enter total applicable deductions</label>
+                    </div>
+                    <button class="btn btn-purple w-100 py-2" type="submit">submit</button>
+                </form>
+            </div>
+        </div>
+    </main>    
+    <div class="overlay w-100 h-100 d-flex justify-content-center align-items-center d-none" id="answer-box">
+        <div class="vertical-box"></div>
+        <div class="horizontal-box">
+            <h2>Your overall income will be</h2>
+            <h2 id="answer-horizontal"></h2>
+            <p id="plain-text">After tax deduction</p>
+            <button class="btn btn-purple w-40 py-2" type="button" id="close-button">Close</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
